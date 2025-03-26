@@ -16,13 +16,13 @@ public class Main {
         // Construir un proyecto de Software
         ProjectBuilder softwareBuilder = new SoftwareProjectBuilder();
         director.setBuilder(softwareBuilder);
-        Project softwareProject = director.buildSoftwareProject("Sistema de Gestión de Inventarios", "TechCorp");
+        Project softwareProject = director.buildSoftwareProject("Sistema de Gestion de Inventarios", "TechCorp");
         System.out.println(softwareProject);
 
         // Construir un proyecto de Ciencia de Datos
         ProjectBuilder dataScienceBuilder = new DataScienceProjectBuilder();
         director.setBuilder(dataScienceBuilder);
-        Project dataScienceProject = director.buildDataScienceProject("Análisis Predictivo de Ventas", "DataCorp");
+        Project dataScienceProject = director.buildDataScienceProject("Analisis Predictivo de Ventas", "DataCorp");
         System.out.println(dataScienceProject);
 
         // Construir un proyecto de Sistemas Embebidos
