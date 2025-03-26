@@ -1,20 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package co.edu.unicauca.figuras.patronbuilder.cliente;
-
+import co.edu.unicauca.figuras.patronbuilder.builder.DataScienceProjectBuilder;
+import co.edu.unicauca.figuras.patronbuilder.builder.EmbeddedSystemsProjectBuilder;
+import co.edu.unicauca.figuras.patronbuilder.builder.ProjectBuilder;
+import co.edu.unicauca.figuras.patronbuilder.builder.SoftwareProjectBuilder;
+import co.edu.unicauca.figuras.patronbuilder.director.ProjectDirector;
+import co.edu.unicauca.figuras.patronbuilder.model.Project;
 /**
  *
  * @author ibell
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ProjectDirector director = new ProjectDirector();
+
+        // Construir un proyecto de Software
+        ProjectBuilder softwareBuilder = new SoftwareProjectBuilder();
+        director.setBuilder(softwareBuilder);
+        Project softwareProject = director.buildSoftwareProject("Sistema de Gestión de Inventarios", "TechCorp");
+        System.out.println(softwareProject);
+
+        // Construir un proyecto de Ciencia de Datos
+        ProjectBuilder dataScienceBuilder = new DataScienceProjectBuilder();
+        director.setBuilder(dataScienceBuilder);
+        Project dataScienceProject = director.buildDataScienceProject("Análisis Predictivo de Ventas", "DataCorp");
+        System.out.println(dataScienceProject);
+
+        // Construir un proyecto de Sistemas Embebidos
+        ProjectBuilder embeddedBuilder = new EmbeddedSystemsProjectBuilder();
+        director.setBuilder(embeddedBuilder);
+        Project embeddedProject = director.buildEmbeddedSystemsProject("Sistema de Monitoreo de Temperatura", "IoT Solutions");
+        System.out.println(embeddedProject);
     }
-    
 }

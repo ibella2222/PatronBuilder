@@ -1,12 +1,12 @@
 package co.edu.unicauca.figuras.patronbuilder.builder;
-
 import java.util.List;
-
 /**
  *
  * @author ibell
  */
-public class SoftwareProjectBuilder extends ProjectBuilder {
+
+
+public class EmbeddedSystemsProjectBuilder extends ProjectBuilder {
 
     @Override
     public void buildName(String name) {
@@ -26,7 +26,7 @@ public class SoftwareProjectBuilder extends ProjectBuilder {
     @Override
     public void buildTechnologies(List<String> technologies) {
         this.technologies = (technologies == null || technologies.isEmpty())
-                ? List.of("Java", "Spring Boot", "PostgreSQL")
+                ? List.of("C", "Arduino", "ESP32")
                 : technologies;
     }
 
@@ -37,6 +37,6 @@ public class SoftwareProjectBuilder extends ProjectBuilder {
 
     @Override
     public void buildDifficulty(String difficulty) {
-        this.difficulty = (difficulty == null || difficulty.isEmpty()) ? "Baja" : difficulty;
+        this.difficulty = (difficulty == null || difficulty.isEmpty()) ? "Alta" : difficulty;
     }
 }
